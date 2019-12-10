@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+
+<head>
+
+  
+<meta charset="UTF-8">
+
+  
+<title>SideNav</title>
+  
+
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+ <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'><link rel="stylesheet" href="./css/style1.css">
+
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js">
+
+</script>
+
+
+</head>
+
+<body>
+
+<!-- partial:index.partial.html -->
+
+
+<body>
+
+  <div id="wrapper">
+<!-- Sidebar -->
+
+    
+<div id="sidebar-wrapper">
+
+
+      <ul class="sidebar-nav">
+
+ 
+       <li><a href="/page?id={{.}}">Home</a></li>
+
+     
+   <li><a href="/about?id={{.}}">About</a></li>
+
+  
+      <li><a href="/contact?id={{.}}">Contact</a></li>
+
+ 
+     </ul>
+    
+</div>
+
+
+    
+    <!-- Page Content --><div id="main">
+  <div id="page-content-wrapper">
+
+  
+    <div class="container-fluid">
+
+    
+    <div class="row">
+
+       
+   <div class="col-lg-12">
+
+        
+     <br><img src="https://usercontent1.hubstatic.com/9210600.png" alt="vtu" width="80" height="80" align="left">
+ <h1 p align="center">BANGALORE INSTITUTE OF TECHNOLOGY <img src=".\images\icons\BIT-Bangalore-Logo.png" alt="BIT" width="80" height="80" align="right"></h1>
+<h4 p align="center">K.R.ROAD, V.V.PURA, BANGALORE</h4>
+  <h3>Admin Menu</h3>
+  <ul class="nav nav-tabs">
+<li class="dropdown"><a href="#" class="btn" id="menu-toggle">
+<span class="glyphicon glyphicon-menu-hamburger">
+</span>
+</a>
+
+</li>
+    <li class="dropdown"><a href="/page?id={{.}}" class="btn" id="menu-toggle">home</a></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" class="btn" id="menu-toggle">teacher<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="/addteacher?id={{.}}">Add teacher</a></li>
+        <li><a href="/view?id={{.}}">view teacher detials</a></li>
+        <li><a href="/update?id={{.}}">edit teacher detials</a></li> 
+        <li><a href="/delete?id={{.}}">delete teacher</a></li>              
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" class="btn" id="menu-toggle">students<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="/aas?id={{.}}">Add students</a></li>
+        <li><a href="/vs?id={{.}}">view students detials</a></li>
+        <li><a href="/aes?id={{.}}">edit students detials</a></li>
+<li><a href="/ads?id={{.}}">delete students </a></li>
+
+        <li><a href="/aresult?id={{.}}">result</a></li>                       
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a  href="/app?id={{.}}" class="btn" id="menu-toggle" >question paper</a>
+      </li>
+      <li></li>
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{.}}</a></li>
+      <li><a href="/logout?id={{.}}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+    </li><br>
+    </div>
+	<br>
+	<br>
+  <br><center>
+  <div class="col-lg-12">
+    
+
+
+<form method="post" action="/create?id={{.}}" id="form1">
+<div style="max-width: 400px;">
+    <h2 class="form-signin-heading">
+        Update teacher</h2>
+    <label for="txtUsername">
+        Username</label>
+    <input name="username" type="text" id="txtUsername" class="form-control" placeholder="Enter Username"
+        required />
+    <br />
+	<label for="txtUsername">
+        UserId</label>
+    <input name="userid" type="text" id="txtUsername" class="form-control" placeholder="Enter Userid"
+        required />
+    <br />
+	<label for="txtUsername">
+        Permission</label> 
+		<br>
+		<input name="permission" checked="checked" value="t" type="radio">Teacher&nbsp; <input
+name="permission" value="a" type="radio">Admin<br>
+
+    <label for="txtPassword">
+        Password</label>
+    <input name="txtPassword" type="password" id="txtPassword" title="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number"
+        class="form-control" placeholder="Enter Password"  />
+    <br />
+    <label for="txtConfirmPassword">
+        Confirm Password</label>
+    <input name="txtConfirmPassword" type="password" id="txtConfirmPassword" class="form-control"
+        placeholder="Confirm Password" />
+    <br />
+    <small style="color: red;">*invalid userid </small><br>	
+						
+    <hr />
+    <input type="submit" name="btnSignup" value="Add teacher" id="btnSignup" class="btn btn-primary" />
+</div>
+</center>
+</form>
+</div>
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var txtPassword = document.getElementById("txtPassword");
+        var txtConfirmPassword = document.getElementById("txtConfirmPassword");
+        txtPassword.onchange = ConfirmPassword;
+        txtConfirmPassword.onkeyup = ConfirmPassword;
+        function ConfirmPassword() {
+            txtConfirmPassword.setCustomValidity("");
+            if (txtPassword.value != txtConfirmPassword.value) {
+                txtConfirmPassword.setCustomValidity("Passwords do not match.");
+            }
+        }
+    }
+</script>
+
+   
+   </div>
+    
+ 
+ </div>
+
+   
+ </div>
+
+ 
+ </div>
+
+	
+
+	
+	
+
+</body>
+
+<!-- partial -->
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'>
+</script>
+<script  src="./js/script.js">
+
+</script>
+
+
+
+</body>
+
+
+</html>

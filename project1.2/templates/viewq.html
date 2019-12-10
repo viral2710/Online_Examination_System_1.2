@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+
+<head>
+
+  
+<meta charset="UTF-8">
+
+  
+<title>SideNav</title>
+  
+
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+</script>
+<link href="https://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+<link href="./src/vanilla-dataTables.css" rel="stylesheet" type="text/css">
+<style>
+      
+.dataTable-wrapper {
+    background: 0 0;
+    margin: 10vh 20px;
+    padding: 20px 40px;
+    box-shadow: 0 0 10px 0 ;
+}
+.dataTable-wrapper table {
+  background-color: transparent;
+  margin: 0;
+}
+
+.dataTable-table th {
+  color: #333;
+  font-weight: 500;
+}
+
+.dataTable-table > thead > tr > th,
+.dataTable-table > tbody > tr > th,
+.dataTable-table > tfoot > tr > th,
+.dataTable-table > thead > tr > td,
+.dataTable-table > tbody > tr > td,
+.dataTable-table > tfoot > tr > td {
+  border-color: transparent;
+}
+
+.dataTable-table > tbody > tr:nth-of-type(2n+1) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dataTable-selector,
+.dataTable-input {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid #fff;
+  box-shadow: none;
+  transition: none 0s ease 0s;
+}
+
+.dataTable-sorter::before,
+.dataTable-sorter::after {
+  opacity: 0.6;
+}
+
+.dataTable-sorter::before {
+  border-top-color: #333;
+}
+
+.dataTable-sorter::after {
+  border-bottom-color: #333;
+}
+
+.dataTable-pagination > li.disabled > a {
+  opacity: 0.6;
+}
+
+.dataTable-table td.match {
+  color: #46be8a;
+  font-weight: 600;
+}
+
+.dataTable-editing {
+  opacity: 0.4;
+}
+
+.selectr-container {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+    </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js">
+
+</script>
+
+
+
+</head>
+
+<body>
+
+<!-- partial:index.partial.html -->
+
+
+
+
+  <div id="wrapper">
+
+
+    <!-- Sidebar -->
+
+    
+<div id="sidebar-wrapper">
+
+
+      <ul class="sidebar-nav">
+
+ 
+       <li><a href="/page?id={{.Uids}}">Home</a></li>
+
+     
+   <li><a href="/about?id={{.Uids}}">About</a></li>
+
+  
+      <li><a href="/contact?id={{.Uids}}">Contact</a></li>
+
+ 
+     </ul>
+    
+</div>
+
+
+    
+    <!-- Page Content --><div id="main">
+  <div id="page-content-wrapper">
+
+  
+    <div class="container-fluid">
+
+    
+    <div class="row">
+
+       
+   <div class="col-lg-12">
+
+        
+     <br><img src="https://usercontent1.hubstatic.com/9210600.png" alt="vtu" width="80" height="80" align="left">
+ <h1 p align="center">BANGALORE INSTITUTE OF TECHNOLOGY <img src=".\images\icons\BIT-Bangalore-Logo.png" alt="BIT" width="80" height="80" align="right"></h1>
+<h4 p align="center">K.R.ROAD, V.V.PURA, BANGALORE</h4>
+  <h3>Teacher Menu</h3>
+  <ul class="nav nav-tabs">
+<li class="dropdown"><a href="#" class="btn" id="menu-toggle">
+<span class="glyphicon glyphicon-menu-hamburger">
+</span>
+</a>
+
+</li>
+    <li class="dropdown"><a href="/paget?id={{.Uids}}" class="btn" id="menu-toggle">home</a></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" class="btn" id="menu-toggle">students<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="/tas?id={{.Uids}}">Add students</a></li>
+        <li><a href="/tvs?id={{.Uids}}">view students detials</a></li>
+        <li><a href="/tes?id={{.Uids}}">edit students detials</a></li>
+<li><a href="/tds?id={{.Uids}}">delete students </a></li>
+
+        <li><a href="/tresult?id={{.Uids}}">result</a></li>                       
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" class="btn" id="menu-toggle">question bank<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+         <li><a href="/gq?id={{.Uids}}">generate question paper</a></li>
+         <li><a href="/vq?id={{.Uids}}">view question paper</a></li> 
+        <li><a href="/teq?id={{.Uids}}">edit question paper</a></li>     
+        <li><a href="/tdq?id={{.Uids}}">delete question paper</a></li>                        
+      </ul>
+      <li></li>
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{ .Uids}}</a></li>
+      <li><a href="/logout?id={{.Uids}}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+    </li><br>
+
+           
+
+ 
+
+      
+    </div>
+  <div class="col-lg-12">
+    <div class="css-script-center">
+
+
+
+	<table class="table" id="table"> 
+<thead>
+      <tr>
+        <th scope="col">question paper id</th>
+        <th scope="col">question paper</th>
+        <th scope="col">no of question</th>
+        <th scope="col">Semester</th>
+        <th scope="col">Subject </th>
+        <th scope="col">Subject Code</th>
+        <th  scope="col">admin</th>
+        <th  scope="col">complete</th>
+        <th  scope="col">view</th>
+        
+        <th>
+      </tr>
+    </thead>
+    <!-- Table body -->
+ <tbody>
+{{ range .D}}
+<tr>
+<td>{{ .Qid}}</td>
+<td>{{ .Q }}</td>
+<td>{{ .Qno }}</td>
+<td>{{ .Sem }}</td>
+<td>{{ .Sub}}</td>
+<td>{{ .Code}}</td>
+<td>{{ .Admin}}</td>
+<td>{{ .Com}}</td>
+<td><a href="/tevq?name={{ .Qid}};id={{.Uids}}" class="btn btn-default" role="button" >view</a></td>
+    
+</tr>
+{{ end }}
+</tbody>
+</table>
+</tbody>
+</table>
+
+   </div>
+  </div>
+
+
+   
+   </div>
+    
+ 
+ </div>
+
+   
+ </div>
+
+ 
+ </div>
+
+	
+
+	
+	
+
+</body>
+
+<!-- partial -->
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'>
+</script>
+<script  src="./js/script.js">
+
+</script>
+<script src="./src/vanilla-dataTables.js"></script>
+<script>
+    var table = document.getElementById('table');
+var options = {
+    sortable: true,
+    searchable: true,
+    fixedHeight: true,
+    perPage: 5
+};
+var dataTable = new DataTable(table, options);
+dataTable.on('datatable.init', function (table) {
+    console.log('Initialised...');
+});
+dataTable.on('datatable.change', function (table) {
+    console.log('Page ' + this.currentPage);
+    if (this.onFirstPage) {
+        console.log('You\'re on the first page!');
+    }
+    if (this.onLastPage) {
+        console.log('You\'re on the last page!');
+    }
+});
+dataTable.on('datatable.sort', function (table) {
+    console.log('Order: ' + this.sortOrder);
+});
+  </script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46156385-1', 'cssscript.com');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  
+
+
+</body>
+
+
+</html>

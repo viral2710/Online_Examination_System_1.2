@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+
+    
+  </ul>
+  <p id="timer" align="right">timer</p>
+<script>
+
+var z ={{ .Time}};
+var x ;
+function pad(n, width) { 
+                n = n + ''; 
+                return n.length >= width ? n :  
+                    new Array(width - n.length + 1).join('0') + n; 
+            } 
+function count()
+ {
+   
+    z--;
+    var m = Math.floor(z/60);
+    var s = Math.floor(z%60);
+    document.getElementById("timer").innerHTML=(pad(m,2)+":"+pad(s,2));
+    x= setTimeout(count,1000);
+    if(z==0)
+    {
+      clearTimeout(x);
+      window.location="/result?id={{ .Uids}};qid={{ .Qid}}";
+     
+    }
+     
+ }
+ count();
+ 
+</script>
+<script type="text/javascript" >
+   function preventBack(){window.history.forward();
+  }
+    setTimeout("preventBack()", 0);
+    window.onunload=function(){null};
+    
+</script>
+<form action="/result?id={{ .Uids}};qid={{ .Qid}}" method="post">
+{{ range .Dl }}
+<div style="border: 3px solid black">
+<label for="txtUsername">
+Question {{.Qno}}:<span style="color: red; font-weight: bold; font-style: italic; text-decoration: underline;">{{.Qs}}</span><br></label>
+ <br>
+ <input name="{{ .Qno}}" value="1" type="radio"><span style="color: rgb(51, 204, 255);font-weight: bold;">option 1:-{{.O1}}</span><br>
+<input name="{{.Qno}}" value="2" type="radio">  <span style="color: rgb(51, 204, 255);font-weight: bold;"> option 2:-{{.O2}}</span><br>
+<input name="{{ .Qno}}" value="3" type="radio"><span style="color: rgb(51, 204, 255);font-weight: bold;">option 3:-{{.O3}}</span><br>
+<input name="{{.Qno}}" value="4" type="radio"><span style="color: rgb(51, 204, 255);font-weight: bold;">option 4:-{{.O4}}</span><br>
+</div>
+{{end}}
+
+<input value="submit" type="submit"></form>
+
+
+</body>
+</html>

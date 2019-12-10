@@ -1,0 +1,270 @@
+ 
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+
+<head>
+
+  
+<meta charset="UTF-8">
+
+  
+<title>SideNav</title>
+  
+
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js">
+
+</script>
+
+
+</head>
+
+<body>
+
+<!-- partial:index.partial.html -->
+
+
+<body>
+
+  <div id="wrapper">
+
+
+    <!-- Sidebar -->
+
+    
+<div id="sidebar-wrapper">
+
+
+      <ul class="sidebar-nav">
+
+ 
+       <li><a href="/page?id={{.Uids}}">Home</a></li>
+
+     
+   <li><a href="/about?id={{.Uids}}">About</a></li>
+
+  
+      <li><a href="/contact?id={{.Uids}}">Contact</a></li>
+
+ 
+     </ul>
+    
+</div>
+
+
+    
+    <!-- Page Content --><div id="main">
+  <div id="page-content-wrapper">
+
+  
+    <div class="container-fluid">
+
+    
+    <div class="row">
+
+       
+   <div class="col-lg-12">
+
+        
+     <br><img src="https://usercontent1.hubstatic.com/9210600.png" alt="vtu" width="80" height="80" align="left">
+ <h1 p align="center">BANGALORE INSTITUTE OF TECHNOLOGY <img src=".\images\icons\BIT-Bangalore-Logo.png" alt="BIT" width="80" height="80" align="right"></h1>
+<h4 p align="center">K.R.ROAD, V.V.PURA, BANGALORE</h4>
+  <h3>Teacher Menu</h3>
+  <ul class="nav nav-tabs">
+<li class="dropdown"><a href="#" class="btn" id="menu-toggle">
+<span class="glyphicon glyphicon-menu-hamburger">
+</span>
+</a>
+
+</li>
+    <li class="dropdown"><a href="/paget?id={{.Uids}}" class="btn" id="menu-toggle">home</a></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" class="btn" id="menu-toggle">students<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="/tas?id={{.Uids}}">Add students</a></li>
+        <li><a href="/tvs?id={{.Uids}}">view students detials</a></li>
+        <li><a href="/tes?id={{.Uids}}">edit students detials</a></li>
+<li><a href="/tds?id={{.Uids}}">delete students </a></li>
+
+        <li><a href="/tresult?id={{.Uids}}">result</a></li>                       
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" class="btn" id="menu-toggle">question bank<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+         <li><a href="/gq?id={{.Uids}}">generate question paper</a></li>
+         <li><a href="/vq?id={{.Uids}}">view question paper</a></li> 
+        <li><a href="/teq?id={{.Uids}}">edit question paper</a></li>     
+        <li><a href="/tdq?id={{.Uids}}">delete question paper</a></li>                        
+      </ul>
+      <li></li>
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{ .}}</a></li>
+      <li><a href="/logout?id={{.Uids}}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+    </li><br>
+
+           
+
+ 
+
+      
+    </div>
+<center>
+  <div >
+    
+
+
+<form method="post" action="/tes1?id={{.Uids}}" id="form1">
+<div style="max-width: 400px;">
+    <h2 class="form-signin-heading">
+        search Students</h2>
+  
+	<label for="txtUsername">
+        UserId</label>
+    <input name="userid" value="{{.Userid}}" type="text" id="txtUsername" class="form-control" placeholder="Enter Userid"
+        required />
+  
+    <input type="submit" name="btnSignup" value="Search" id="btnSignup" class="btn btn-primary" />
+</div>
+</center>
+</form>
+</div>
+  <div >
+    
+
+<center>
+<form method="post" action="/tesf?id={{.Uids}}" id="form1">
+<div style="max-width: 400px;">
+    <h2 class="form-signin-heading">
+        Update Student</h2>
+    <label for="txtUsername">
+        Username</label>
+    <input name="username" value ="{{.Username}}" type="text" id="txtUsername" class="form-control" placeholder="Enter Username"
+        required />
+    <br /> 
+      <label for="txtUsername">
+	 Sem.</label>
+    <input name="sem" value="{{.Sem}}" type="text" id="txtUsername" class="form-control" placeholder="Enter Userid"
+        required pattern="[1-8]{1}" />
+    <br />  
+    <label for="txtPassword">
+        Password</label>
+    <input name="passwd" type="password" id="txtPassword" title="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number"
+        class="form-control" placeholder="Enter Password"  />
+    <br />
+    <label for="txtConfirmPassword">
+        Confirm Password</label>
+    <input name="passwd1" type="password" id="txtConfirmPassword" class="form-control"
+        placeholder="Confirm Password" />
+    <br />
+    
+    <hr />
+    <input type="submit" name="btnSignup" value="Update student" id="btnSignup" class="btn btn-primary" />
+</div>
+</center>
+</form>
+</div>
+
+
+   
+   </div>
+    
+ 
+ </div>
+
+   
+ </div>
+
+ 
+ </div>
+
+	
+
+	
+	
+
+</body>
+
+<!-- partial -->
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'>
+</script>
+<script  src="./js/script.js">
+
+</script>
+<script type="text/javascript">
+    window.onload = function () {
+        var txtPassword = document.getElementById("txtPassword");
+        var txtConfirmPassword = document.getElementById("txtConfirmPassword");
+        txtPassword.onchange = ConfirmPassword;
+        txtConfirmPassword.onkeyup = ConfirmPassword;
+        function ConfirmPassword() {
+            txtConfirmPassword.setCustomValidity("");
+            if (txtPassword.value != txtConfirmPassword.value) {
+                txtConfirmPassword.setCustomValidity("Passwords do not match.");
+            }
+        }
+    }
+</script>
+
+
+  
+
+
+ 
+    </div>
+  
+
+
+   
+   </div>
+    
+ 
+ </div>
+
+   
+ </div>
+
+ 
+ </div>
+
+	
+
+	
+	
+
+</body>
+
+<!-- partial -->
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'>
+</script>
+<script  src="./js/script.js">
+
+</script>
+
+
+
+  
+
+
+</body>
+
+
+</html>

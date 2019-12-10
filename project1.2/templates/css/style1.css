@@ -1,0 +1,45 @@
+/* DemoPage CSS Style */
+/* see below for form validator style */
+body {
+  font-family: sans-serif;
+  color: #333;
+}
+
+form {
+  width: 80%;
+  margin: 40px auto;
+}
+
+/* ======================== */
+/* FORM VALIDATOR CSS STYLE */
+/* ======================== */
+.form-input-error-msg {
+    display: none;
+    padding: 4px 0;
+    margin-bottom: 5px;
+    color: red;
+    font-weight: bold;
+    font-size: 0.8em;
+    overflow: hidden;
+}
+.form-input-error-msg.show-error {
+    display: block;
+}
+.alert.form-input-error-msg {
+    padding: 4px;
+    margin-bottom: 5px;
+    color: #a94442;
+    font-weight: bold;
+}
+.form-input-error-msg span.error-empty, 
+.form-input-error-msg span.error-wrong {
+    display: none;
+}
+.form-input-error-msg span.error-empty.show-error, 
+.form-input-error-msg span.error-wrong.show-error {
+    display: inline-block;
+}
+
+.error {
+    border-color: red;
+}
